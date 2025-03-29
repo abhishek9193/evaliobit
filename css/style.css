@@ -392,7 +392,6 @@ p {
 /* Form Styles */
 .contact-form {
     width: 100%;
-    max-width: 100%;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -400,7 +399,6 @@ p {
 
 .form-group {
     width: 100%;
-    margin-bottom: 0;
 }
 
 .form-group input,
@@ -583,7 +581,7 @@ p {
     }
     
     .contact-form {
-        max-width: 100%;
+        width: 100%;
     }
 }
 

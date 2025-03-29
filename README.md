@@ -1,24 +1,75 @@
-# EvalIOBit Incubator Website
+# EvalIOBit Website
 
-A modern, minimalist website for EvalIOBit Incubator (OPC) Pvt Ltd, showcasing our IT services, product development, and digital content creation capabilities.
+This is the official website for EvalIOBit Incubator, showcasing our IT services, products, and digital innovation solutions.
 
 ## Features
 
-- Responsive design that works on all devices
-- Modern, minimalist aesthetic
-- Fast loading and optimized performance
-- Smooth scrolling and animations
+- Modern, responsive design
 - Mobile-friendly navigation
-- Contact form integration
-- Social media integration
+- Contact form with email integration
+- Smooth scrolling
+- Animated sections
+- Portfolio showcase (coming soon)
 
-## Tech Stack
+## Technologies Used
 
 - HTML5
-- CSS3 (with CSS Variables and Flexbox/Grid)
-- Vanilla JavaScript (ES6+)
+- CSS3
+- JavaScript (Vanilla)
 - Font Awesome Icons
-- Google Fonts (Inter)
+- Google Fonts (Poppins & Inter)
+
+## Deployment on GitHub Pages
+
+1. Create a new repository on GitHub
+2. Push your code to the repository:
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git branch -M main
+   git remote add origin https://github.com/[your-username]/[repository-name].git
+   git push -u origin main
+   ```
+
+3. Go to your repository's Settings
+4. Scroll down to the "GitHub Pages" section
+5. Under "Source", select the `main` branch
+6. Click "Save"
+
+Your site will be available at `https://[your-username].github.io/[repository-name]`
+
+## Local Development
+
+To run this website locally:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/[your-username]/[repository-name].git
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd [repository-name]
+   ```
+
+3. Open `index.html` in your web browser or use a local server:
+   ```bash
+   # Using Python
+   python -m http.server 8000
+   
+   # Using Node.js
+   npx serve
+   ```
+
+4. Visit `http://localhost:8000` in your browser
+
+## Contact Form
+
+The contact form uses a `mailto:` link to open the user's default email client. When a user submits the form:
+1. Their email client will open
+2. The form data will be pre-filled in the email
+3. They can review and send the email
 
 ## Project Structure
 
@@ -29,107 +80,8 @@ evaliobit-website/
 │   └── style.css
 ├── js/
 │   └── main.js
-├── images/
-├── assets/
 └── README.md
 ```
-
-## Deployment Options
-
-### Option A: Netlify Deployment (Recommended)
-
-1. Create a Netlify account at [netlify.com](https://netlify.com)
-2. Install Netlify CLI (optional):
-   ```bash
-   npm install -g netlify-cli
-   ```
-3. Deploy using one of these methods:
-   - Drag and drop the `evaliobit-website` folder to Netlify's dashboard
-   - Use Netlify CLI:
-     ```bash
-     cd evaliobit-website
-     netlify deploy
-     ```
-4. Configure your custom domain in Netlify's dashboard
-
-### Option B: GitHub Pages Deployment
-
-1. Create a new GitHub repository
-2. Push your code to the repository:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git remote add origin <your-repository-url>
-   git push -u origin main
-   ```
-3. Go to repository Settings > Pages
-4. Select the main branch as the source
-5. Your site will be available at `https://<username>.github.io/<repository-name>`
-
-### Option C: Traditional Hosting (cPanel)
-
-1. Log in to your cPanel account
-2. Navigate to File Manager
-3. Upload the contents of the `evaliobit-website` folder to the `public_html` directory
-4. Configure your domain in cPanel's DNS settings
-
-## Customization
-
-### Colors
-The website uses CSS variables for easy color customization. Edit the following variables in `css/style.css`:
-
-```css
-:root {
-    --primary-color: #2563eb;
-    --secondary-color: #1e40af;
-    --text-color: #1f2937;
-    --light-text: #6b7280;
-    --background: #ffffff;
-    --light-background: #f3f4f6;
-    --border-color: #e5e7eb;
-}
-```
-
-### Content
-- Update text content in `index.html`
-- Add/remove services in the services section
-- Update contact information
-- Add social media links in the footer
-
-### Images
-- Place new images in the `images` directory
-- Update image paths in `index.html`
-
-## Maintenance
-
-### Regular Updates
-1. Keep content fresh and up-to-date
-2. Monitor and update dependencies
-3. Test across different devices and browsers
-4. Check for broken links and forms
-
-### Performance Optimization
-1. Optimize images before uploading
-2. Minify CSS and JavaScript files
-3. Enable browser caching
-4. Use a CDN for assets
-
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers (iOS Safari, Android Chrome)
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
 
 ## License
 

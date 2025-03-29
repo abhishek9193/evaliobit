@@ -59,8 +59,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Form handling
-    const form = document.querySelector('.contact-form');
-    const submitBtn = document.querySelector('#submitBtn');
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
     const spinner = submitBtn.querySelector('.fa-spinner');
     const submitText = submitBtn.querySelector('span');
     const formStatus = document.querySelector('#formStatus');
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Handle form submission
-    form.addEventListener('submit', async function(e) {
+    form.addEventListener('submit', function(e) {
         e.preventDefault();
 
         if (!validateForm()) {
@@ -114,38 +114,29 @@ document.addEventListener('DOMContentLoaded', function() {
         // Disable submit button and show spinner
         submitBtn.disabled = true;
         spinner.style.display = 'inline-block';
-        submitText.textContent = 'Sending...';
+        submitText.textContent = 'Opening Email...';
         formStatus.style.display = 'none';
 
-        try {
-            const formData = new FormData(form);
-            const response = await fetch('/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: new URLSearchParams(formData).toString()
-            });
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        const subject = `Contact Form Submission from ${name}`;
+        const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${message}`;
+        const mailtoLink = `mailto:contact@evaliobit.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
+        // Open email client
+        window.location.href = mailtoLink;
 
-            // Show success message
-            formStatus.textContent = 'Thank you! Your message has been sent successfully.';
-            formStatus.className = 'form-status success';
-            form.reset();
-            formStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        } catch (error) {
-            console.error('Form submission error:', error);
-            formStatus.textContent = 'An error occurred while sending your message. Please try again later or contact us directly at contact@evaliobit.com';
-            formStatus.className = 'form-status error';
-        } finally {
-            // Re-enable submit button and hide spinner
-            submitBtn.disabled = false;
-            spinner.style.display = 'none';
-            submitText.textContent = 'Send Message';
-        }
+        // Show success message
+        formStatus.textContent = 'Thank you! Your email client will open to send the message.';
+        formStatus.className = 'form-status success';
+        form.reset();
+        formStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        // Re-enable submit button and hide spinner
+        submitBtn.disabled = false;
+        spinner.style.display = 'none';
+        submitText.textContent = 'Send Message';
     });
 
     // Intersection Observer for fade-in animations
