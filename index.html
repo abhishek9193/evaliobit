@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
@@ -34,11 +35,11 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
-            <h1>Empowering Innovation Through AI</h1>
-            <p class="hero-subtitle">Transforming ideas into next-generation products and solutions</p>
+            <h1>Transforming Ideas into AI-Powered Reality</h1>
+            <p class="hero-subtitle">Your trusted partner in IT services, product development, and digital innovation</p>
             <div class="cta-buttons">
-                <a href="#contact" class="btn btn-primary">Get Started</a>
-                <a href="#services" class="btn btn-secondary">Explore Services</a>
+                <a href="#contact" class="btn btn-primary">Start Your Project</a>
+                <a href="#services" class="btn btn-secondary">Explore Our Services</a>
             </div>
         </div>
     </section>
@@ -51,17 +52,17 @@
                 <div class="service-card">
                     <i class="fas fa-code"></i>
                     <h3>IT Services & Consulting</h3>
-                    <p>Web development, Data Management, AI/ML solutions, and custom application development.</p>
+                    <p>Expert solutions in web development, data management, AI/ML integration, and custom application development to drive your business forward.</p>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-mobile-alt"></i>
                     <h3>Product Development</h3>
-                    <p>Mobile apps, web extensions, and innovative product incubation.</p>
+                    <p>From mobile apps to web extensions, we transform innovative ideas into market-ready products that make a difference.</p>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-video"></i>
                     <h3>Digital Content</h3>
-                    <p>YouTube videos, educational content, and creative media production.</p>
+                    <p>Engaging YouTube content, educational videos, and creative media that inform, entertain, and inspire your audience.</p>
                 </div>
             </div>
         </div>
@@ -70,9 +71,11 @@
     <!-- Products Section -->
     <section id="products" class="products">
         <div class="container">
-            <h2>Our Products</h2>
-            <div class="products-grid">
-                <!-- Product cards will be dynamically loaded -->
+            <h2>Our Portfolio</h2>
+            <div class="coming-soon">
+                <i class="fas fa-rocket"></i>
+                <h3>Coming Soon</h3>
+                <p>We're working on something amazing. Stay tuned for our portfolio showcase!</p>
             </div>
         </div>
     </section>
@@ -83,17 +86,17 @@
             <h2>About Us</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>EvalIOBit Incubator is at the forefront of AI-driven innovation, helping businesses and individuals leverage cutting-edge technology to create transformative solutions.</p>
-                    <p>Our vision is to empower ourselves and our customers to build next-generation products, software, and content that shape the future of technology.</p>
+                    <p>At EvalIOBit Incubator, we're not just another IT company. We're a team of innovators passionate about leveraging AI and cutting-edge technology to create transformative solutions.</p>
+                    <p>Our mission is to empower businesses and individuals with next-generation technology solutions, helping them stay ahead in an increasingly digital world.</p>
                 </div>
                 <div class="about-stats">
                     <div class="stat-item">
                         <span class="stat-number">50+</span>
-                        <span class="stat-label">Projects Completed</span>
+                        <span class="stat-label">Projects Delivered</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-number">100+</span>
-                        <span class="stat-label">Happy Clients</span>
+                        <span class="stat-label">Satisfied Clients</span>
                     </div>
                 </div>
             </div>
@@ -112,20 +115,31 @@
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
-                        <a href="tel:+917982339914">+91-7982339914</a>
+                        <a href="tel:+917303900914">+91-7303900914</a>
                     </div>
                 </div>
-                <form class="contact-form">
+                <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" netlify>
+                    <input type="hidden" name="form-name" value="contact" />
+                    <p class="hidden">
+                        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                    </p>
                     <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
+                        <input type="text" name="name" id="name" placeholder="Your Name" required>
+                        <div class="error-message" id="nameError"></div>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
+                        <input type="email" name="email" id="email" placeholder="Your Email" required>
+                        <div class="error-message" id="emailError"></div>
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Your Message" required></textarea>
+                        <textarea name="message" id="message" placeholder="Your Message" required></textarea>
+                        <div class="error-message" id="messageError"></div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <div class="form-status" id="formStatus"></div>
+                    <button type="submit" class="btn btn-primary" id="submitBtn">
+                        <span>Send Message</span>
+                        <i class="fas fa-spinner fa-spin" style="display: none;"></i>
+                    </button>
                 </form>
             </div>
         </div>
